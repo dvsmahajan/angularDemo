@@ -1,0 +1,103 @@
+<p>player-statistics works!</p>
+<div class="container" *ngIf='playerData!=null'>
+    <div class="row">
+        <div class="col-sm-4">
+            <label>Id:</label>
+        </div>
+        <div class="col-sm">
+            {{playerData.pid}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <label>Fullname:</label>
+        </div>
+        <div class="col-sm">
+            {{playerData.fullName}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <label>DOB:</label>
+        </div>
+        <div class="col-sm">
+            {{playerData.born}}
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-4">
+            <label>Batting Style:</label>
+        </div>
+        <div class="col-sm">
+            {{playerData.battingStyle}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <label>Bowling Style:</label>
+        </div>
+        <div class="col-sm">
+            {{playerData.bowlingStyle}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <label>Image: </label>
+        </div>
+        <div class="col-sm">
+            <img [src]='playerData.imageURL'>
+        </div>
+    </div>
+
+
+
+    <!-- <div>
+        Battings
+        <table>
+            <thead>
+                <tr>
+                    <th>type</th>
+                    <th>100s</th>
+                    <th>50s</th>
+                    <th>stumps</th>
+                    <th>catches</th>
+                    <th>6s</th>
+                    <th>4s</th>
+                    <th>Strike Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let bat of playerData.data.batting'>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        Bowling
+        <table>
+            <thead>
+                <tr>
+                    <th>type</th>
+                    <th>Innings</th>
+                    <th>Runs</th>
+                    <th>Average</th>
+                    <th>BBI</th>
+                    <th>BBM</th>
+                    <th>SR</th>
+                    <th>Wickets</th>
+                </tr>
+            </thead>
+        </table>
+    </div> -->

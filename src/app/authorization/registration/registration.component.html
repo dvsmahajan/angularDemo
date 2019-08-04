@@ -1,0 +1,41 @@
+<div class="col-sm-6 mx-auto">
+    <div class="text-center display-4 mt-4 mb-5 uk-text-bold">
+        Registration
+    </div>
+    <form [formGroup]='regUser' (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>First Name: </label>
+            <input class="form-control" name="fName" type="text" formControlName="fName" />
+        </div>
+        <div class="form-group">
+            <label>Last Name: </label>
+            <input class="form-control" name="lName" type="text" formControlName="lName" />
+        </div>
+        <div class="form-group">
+            <label>Email Id: </label>
+            <input class="form-control" name="emailId" type="email" formControlName="email" />
+        </div>
+        <div class="form-group">
+            <label>Contact Number: </label>
+            <input class="form-control" name="contactNo" type="tel" formControlName="contactNumber" />
+        </div>
+        <div class="form-group">
+            <label>Password: </label>
+            <input class="form-control" name="password" type="password" formControlName="password" />
+        </div>
+        <div class="form-group">
+            <label>Confirm Password: </label>
+            <input class="form-control" name="confirmPassword" type="password" formControlName="confirmPassword" />
+        </div>
+
+        <div class="row justify-content-between mt-5">
+            <div class="col-sm-4 ml-0">
+                <button class="btn btn-danger col-sm-12" type="reset">Clear</button>
+            </div>
+            <div class="col-sm-4 mr-0">
+                <button class="btn btn-success col-sm-12" type="submit">Register</button>
+            </div>
+        </div>
+    </form>
+
+</div>

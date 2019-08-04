@@ -1,0 +1,28 @@
+<div class="container" *ngIf="isNullData">
+
+    <div class="row form-group">
+        <input type="date" class='col-sm-3' #start>
+        <button class="btn btn-dark" (click)="getFilters(start.value)">Filter</button>
+    </div>
+
+    <ngx-datatable #table class="material" [columns]="columns" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'" [limit]="10" [rows]="rows">
+
+        <!-- <ngx-datatable-column name="pid">
+            <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                {{value}}
+            </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="full Name">
+            <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                {{value}}
+            </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Action">
+            <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                <button mat-flat-button (click)="getPlayer(row.pid)" color="primary">View Details</button>
+            </ng-template>
+        </ngx-datatable-column> -->
+    </ngx-datatable>
+</div>

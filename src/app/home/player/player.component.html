@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="col-sm-12 justify-content-center">
+        <form [formGroup]="playerBuilder">
+            <div class="text-center display-4 mt-4 mb-5 uk-text-bold">
+                Login Details
+            </div>
+
+
+            <div class="row justify-content-between mt-5">
+                <div class="form-group col-sm-6">
+                    <input class="form-control" type="text" name="pname" formControlName="pname" placeholder="Player Name" />
+                </div>
+                <div class="col-sm-4 ml-0">
+                    <button class="btn btn-dark col-sm-12" (click)="findPlayer()">search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <div *ngIf="isListEmpty" class="mt-5">
+        <!-- <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tr *ngFor="let player of playerList">
+                <td>{{player.pid}}</td>
+                <td>{{player.fullName}}</td>
+                <td><button type="button" class="btn badge-primary" (click)="getPlayer(player.pid)">View<span class="fi-align-center"></span></button></td>
+            </tr>
+        </table> -->
+        <div>
+            <h3>
+                Player Details
+            </h3>
+            <input type="text" style="padding:8px;margin:15px auto;width:30%;" placeholder="Type to filter the name column..." (keyup)="updateFilter($event)" />
+            <ngx-datatable #table class="material" [columns]="columns" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'" [limit]="10" [rows]="rows">
+
+                <ngx-datatable-column name="pid">
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        {{value}}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="full Name">
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        {{value}}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Action">
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <!-- <button mat-flat-button (click)="getPlayer(row.pid)" color="primary">View Details</button> -->
+                        <button mat-raised-button (click)="getPlayerPop(row.pid)" color="primary">View Details</button>
+                    </ng-template>
+                </ngx-datatable-column>
+            </ngx-datatable>
+        </div>
+    </div>
+</div>
